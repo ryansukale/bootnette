@@ -5,6 +5,7 @@ require.config({
     /* General modules */
     //localstorage: "lib/backbone.localStorage",
     json2: "lib/json2",
+    handlebars: "lib/handlebars-v1.3.0",
     modernizr: "lib/modernizr-2.7.1.min",
     bootstrap: "lib/bootstrap-3.1.1.min",
     jquery: "lib/jquery-1.9.1.min",
@@ -16,7 +17,8 @@ require.config({
 
     /* Your Marionette application specfic Modules */
     app:'app/marionette.app',
-    login: "app/modules/bundled/login"
+    login: "app/modules/bundled/login",
+    menu: "app/modules/bundled/menu"
   },
   shim: {
     jquery: {
@@ -24,6 +26,9 @@ require.config({
     },
     'underscore': {
       exports: '_'
+    },
+    'handlebars': {
+      exports: 'Handlebars'
     },
     'bootstrap': {
       deps: ['jquery']
@@ -50,7 +55,7 @@ require.config({
 //http://robdodson.me/blog/2012/11/18/a-require-dot-js-multipage-shimmed-site-how-to/
 //http://simonsmith.io/modular-html-components-with-requirejs/
 require(
-  ['jquery','underscore','backbone','marionette','json2','modernizr','bootstrap','jqueryUI']
+  ['jquery','underscore','backbone','marionette','handlebars','json2','modernizr','bootstrap','jqueryUI']
   ,
   function($,_,Backbone,Marionette) {
     $(function(){

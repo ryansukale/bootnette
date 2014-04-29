@@ -1,5 +1,5 @@
 var dependencies = ['marionette','backbone','jquery','underscore'];
-var appModules = ['login'];
+var appModules = ['login','menu'];
 
 // The main app is not a module in itself
 require(
@@ -12,9 +12,7 @@ require(
 
 				var App = new Backbone.Marionette.Application();
 				App.on('initialize:before', function(options) {
-					// Do something .e.g. you can add more data to your options
-					// console.log('App initialized:before');
-
+					
 					// Instantiate the modules for your App
 					_.each(appModules, function(elm,idx){
 						require(elm)(App);
