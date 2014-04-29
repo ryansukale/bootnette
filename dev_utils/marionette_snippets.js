@@ -130,3 +130,7 @@ MyApp.someRegion.show(myLayout);
 // Once you've rendered the layout, you now have direct access to all of the specified regions as region managers.
 layout.myRegion.show(new MenuView());
 layout.anotherRegion.show(new SubLayout()); // Note how you can show a sublayout in layout
+
+MyApp.vent.on("minutePassed", function(someData){
+  alert("Received", someData);
+});
