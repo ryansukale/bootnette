@@ -1,6 +1,6 @@
 bootnette
 ========
-bootnette is an experimental project to integrate bootstrap with the awesome marionette framework. It is built on top of bootcamp. I still need to pan out what this is going to turn into!
+bootnette is an experimental project to integrate bootstrap with the awesome marionette framework. It is built on top of [bootcamp](https://github.com/ryansukale/bootcamp). I still need to pan out what this is going to turn into!
 
 As the project evolves, more libraries might be added and existing libraries will be integrated to provide more functionality.
 
