@@ -49,6 +49,12 @@ require(
 			    }
 			  };
 
+			  // App is the godfather. It knows about all the regions
+			  App.addRegions({
+				  mainMenuRegion: "#mainMenu",
+				  mainContentRegion: "#mainContent"
+				});
+
 				// Start the app once the DOM is ready
 				$(function(){
 					  App.start();
