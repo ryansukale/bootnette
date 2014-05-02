@@ -13,48 +13,41 @@ define(['marionette.main'],function(){
 
 			  initialize: function(options){
 
-			  	this.region = options.region;
-			  	this.menuTemplate = options.menuTemplate;
+			  	// Save the initialization options
+			  	this.options = options;
 
 			    this.menuData = {
 				  	menuItems : [
 					    { url: "http://www.ryansukale.com", title: "Ryan Sukale", isActive:true },
-					    { url: "http://www.quodocs.com", title: "QuoDocs" }
+					    { url: "http://www.google.com", title: "Google" }
 				  ]};
 
 			  },
 			  show: function(){
 			    // get the layout and show it
 			    var menu = this._getMenu();
-			    this.region.show(menu);
+			    this.options.region.show(menu);
 			  },
 			  _getMenu: function(){
 
-			  	// Temporarily defining views over here
-		  		var menu = new Marionette.ItemView({
-		  			template:this.menuTemplate
-		  		});
-
-		  		var MenuView = Marionette.ItemView.extend({
-		  			template:this.menuTemplate
-		  		});
-
-		  		var menu = new MenuView({model:new Backbone.Model(this.menuData)});
+		  		var menu = new this.options.MenuView({model:new Backbone.Model(this.menuData)});
 
 			    return menu;
 			  }
 
 			});
 
-		  // If you require any module specific dependencies during code execution
-		  // such as loading any plugins and templates you can execute them inside a require block as follows
-		  var dependencies = ['handlebars','text!tpl/vMenu.tpl'];
+		  /* 	
+		  		Load module specific dependencies such as models & view definitions
+		   		before initializing the router and controller
+		  */
+		  var dependencies = ['app/views/menuview'];
 
-		  require(dependencies,function(Handlebars,menuTpl){
+		  require(dependencies,function(menuview){
 		  	
 			  var controller = new MenuModuleController({
-			  	region:App.mainMenuRegion,
-			  	menuTemplate:Handlebars.compile(menuTpl)
+			  	region:App.mainMenuRegion, /* The region that this module controls */
+			  	MenuView:menuview
 			 	});
 				controller.show();
 

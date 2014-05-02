@@ -1,11 +1,11 @@
 <div class="vMenu">
   <ul class="menu-items list-unstyled">
-  	{{#each menuItems}}
+  	{#menuItems}
     	<li class="item">
-    		<a href="{{url}}" class="{{#if isActive}}active{{/if}}">
-    			{{title}}
+    		<a href="{url}" >
+    			{title}
     		</a>
     	</li>
-    {{/each}}
+    {/menuItems}
   </ul>
 </div>

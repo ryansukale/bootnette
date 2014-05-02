@@ -30,6 +30,9 @@ require.config({
     'underscore': {
       exports: '_'
     },
+    'dust': {
+      exports: 'dust'
+    },
     'handlebars': {
       exports: 'Handlebars'
     },
@@ -48,6 +51,9 @@ require.config({
     marionette : {
       deps : ['jquery', 'underscore', 'backbone'],
       exports : 'Marionette'
+    },
+    dustMarionette : {  // This is a marionette plugin
+      deps : ['marionette','dust']
     }
   }
 });
@@ -58,7 +64,7 @@ require.config({
 //http://robdodson.me/blog/2012/11/18/a-require-dot-js-multipage-shimmed-site-how-to/
 //http://simonsmith.io/modular-html-components-with-requirejs/
 require(
-  ['jquery','underscore','backbone','marionette','handlebars','json2','modernizr','bootstrap','jqueryUI']
+  ['jquery','underscore','backbone','marionette','dust','dustMarionette','json2','modernizr','bootstrap','jqueryUI']
   ,
   function($,_,Backbone,Marionette) {
     $(function(){
