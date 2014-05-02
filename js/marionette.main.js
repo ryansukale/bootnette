@@ -16,7 +16,6 @@ require.config({
     marionette: "lib/backbone.marionette.min",
 
     /* Your Marionette application specfic Modules */
-    app:'app/marionette.app',
     login: "app/modules/bundled/login",
     menu: "app/modules/bundled/menu"
   },
