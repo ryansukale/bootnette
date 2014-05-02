@@ -1,13 +1,13 @@
-var dependencies = ['marionette','backbone','jquery','underscore'];
-var appModules = ['login','menu'];
-
 // The main app is not a module in itself
 require(
 	// Load the main module
 	['marionette.main'], 
 	function () {
+		var commonModules = ['marionette','backbone','jquery','underscore'],
+		appModules = ['login','menu'];
+
     require(
-		dependencies.concat(appModules),
+		commonModules.concat(appModules),
 			function (Marionette,Backbone,$,_) {
 
 				var App = new Backbone.Marionette.Application();
