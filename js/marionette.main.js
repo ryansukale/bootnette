@@ -6,14 +6,18 @@ require.config({
     //localstorage: "lib/backbone.localStorage",
     json2: "lib/json2",
     handlebars: "lib/handlebars-v1.3.0",
+    dust: 'lib/dust-full.min',
     modernizr: "lib/modernizr-2.7.1.min",
     bootstrap: "lib/bootstrap-3.1.1.min",
     jquery: "lib/jquery-1.9.1.min",
     jqueryUI: "lib/jquery-ui-1.10.0.custom.min",
     underscore: "lib/underscore.min",
-    text: "plugins/text",
     backbone: "lib/backbone.min",
     marionette: "lib/backbone.marionette.min",
+
+    /* Plugins */
+    text: "plugins/text",
+    dustMarionette:'plugins/backbone.marionette.dust',
 
     /* Your Marionette application specfic Modules */
     login: "app/modules/bundled/login",
