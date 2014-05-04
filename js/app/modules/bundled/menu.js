@@ -19,7 +19,8 @@ define(['marionette.main'],function(){
 			    this.menuData = {
 				  	menuItems : [
 					    { url: "http://www.ryansukale.com", title: "Ryan Sukale", isActive:true },
-					    { url: "http://www.google.com", title: "Google" }
+					    { url: "http://www.google.com", title: "Google" },
+					    { url: "#about", title: "About" }
 				  ]};
 
 			  },
@@ -33,6 +34,9 @@ define(['marionette.main'],function(){
 		  		var menu = new this.options.MenuView({model:new Backbone.Model(this.menuData)});
 
 			    return menu;
+			  },
+			  showAbout:function () {
+			  	console.log('showing about');
 			  }
 
 			});
@@ -50,6 +54,13 @@ define(['marionette.main'],function(){
 			  	MenuView:menuview
 			 	});
 				controller.show();
+
+				var Router = new Marionette.AppRouter({
+				  controller: controller,
+				  appRoutes: {
+				    "about": "showAbout"  /* These functions are defined on the controller */
+				  }
+				});
 
 		  });
 
